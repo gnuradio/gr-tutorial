@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<block>
+  <name>My QPSK Demodulator</name>
+  <key>tutorial_my_qpsk_demod_cb</key>
+  <category>tutorial</category>
+  <import>import tutorial</import>
+  <make>tutorial.my_qpsk_demod_cb($differential_coding, $Gray_code)</make>
+  <param>
+    <name>Gray Code</name>
+    <key>Gray_code</key>
+    <value>True</value>
+    <type>bool</type>
+    <option>
+      <name>Yes</name>
+      <key>True</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>False</key>
+    </option>
+  </param>
+  <param>
+    <name>Differential Encoding</name>
+    <key>differential_coding</key>
+    <value>True</value>
+    <type>bool</type>
+    <option>
+      <name>Yes</name>
+      <key>True</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>False</key>
+    </option>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>
