@@ -26,6 +26,7 @@ include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 
 list(APPEND tutorial_sources
+  my_qpsk_demod_cb_impl.cc
 )
 
 set(tutorial_sources "${tutorial_sources}" PARENT_SCOPE)
