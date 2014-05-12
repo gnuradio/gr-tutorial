@@ -1,4 +1,4 @@
-It is considered good practice to add examples in here to demonstrate the
-functionality of your OOT module. Python scripts, GRC flow graphs or other
-code can go here.
+The examples within each of these directories correspond the the
+tutorials found at the gnuradio.org website:
 
+http://gnuradio.org/redmine/projects/gnuradio/wiki/TutorialsTaskForce

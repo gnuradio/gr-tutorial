@@ -90,7 +90,7 @@ find_package(Doxygen)
 # components required to the list of GR_REQUIRED_COMPONENTS (in all
 # caps such as FILTER or FFT) and change the version to the minimum
 # API compatible version required.
-set(GR_REQUIRED_COMPONENTS RUNTIME)
+set(GR_REQUIRED_COMPONENTS RUNTIME BLOCKS FILTER DIGITAL ANALOG)
 find_package(Gnuradio "3.7.2" REQUIRED)
 
 if(NOT CPPUNIT_FOUND)
@@ -129,6 +129,8 @@ link_directories(
 set(GR_TUTORIAL_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include CACHE INTERNAL "" FORCE)
 set(GR_TUTORIAL_SWIG_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/swig CACHE INTERNAL "" FORCE)
 
+SET(GR_PKG_TUTORIALS_EXAMPLES_DIR ${GR_PKG_DATA_DIR}/examples/tutorials)
+
 ########################################################################
 # Create uninstall target
 ########################################################################
@@ -151,10 +153,11 @@ add_subdirectory(python)
 add_subdirectory(grc)
 add_subdirectory(apps)
 add_subdirectory(docs)
+add_subdirectory(examples)
 
 ########################################################################
 # Install cmake search helper for this library
 ########################################################################
-install(FILES cmake/Modules/tutorialConfig.cmake        
+install(FILES cmake/Modules/tutorialConfig.cmake
     DESTINATION lib/cmake/tutorial
 )
