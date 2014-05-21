@@ -1,19 +1,21 @@
 /* -*- c++ -*- */
-/* 
- * Copyright 2014 <+YOU OR YOUR COMPANY+>.
- * 
- * This is free software; you can redistribute it and/or modify
+/*
+ * Copyright 2014 Free Software Foundation, Inc.
+ *
+ * This file is part of GNU Radio
+ *
+ * GNU Radio is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 3, or (at your option)
  * any later version.
- * 
- * This software is distributed in the hope that it will be useful,
+ *
+ * GNU Radio is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
+ * along with GNU Radio; see the file COPYING.  If not, write to
  * the Free Software Foundation, Inc., 51 Franklin Street,
  * Boston, MA 02110-1301, USA.
  */
@@ -29,9 +31,24 @@ namespace gr {
   namespace tutorial {
 
     /*!
-     * \brief <+description of block+>
-     * \ingroup demod
+     * \brief A QPSK demodulator.
+     * \ingroup tutorial
      *
+     * Maps complex symbols to unpacked bytes.
+     *
+     * This demodulator understands two constellations:
+     *
+     * With Gray coding:
+     *
+     * (1,0) | (0,0)
+     * ------+------
+     * (1,1) | (0,1)
+     *
+     * Without Gray coding:
+     *
+     * (1,0) | (0,0)
+     * ------+------
+     * (1,1) | (0,1)
      */
     class TUTORIAL_API my_qpsk_demod_cb : virtual public gr::block
     {
@@ -45,6 +62,9 @@ namespace gr {
        * constructor is in a private implementation
        * class. demod::my_qpsk_demod_cb::make is the public interface for
        * creating new instances.
+       *
+       * \param differential_coding Set to true if data symbols were encoded differentially.
+       * \param gray_code Set to true to activate the Gray code.
        */
       static sptr make(bool differential_coding, bool gray_code);
     };
