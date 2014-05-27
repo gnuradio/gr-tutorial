@@ -24,8 +24,6 @@
 #define INCLUDED_DEMOD_MY_QPSK_DEMOD_CB_IMPL_H
 
 #include <tutorial/my_qpsk_demod_cb.h>
-#include <stdlib.h>
-#include <float.h>
 
 namespace gr {
   namespace tutorial {
@@ -33,25 +31,25 @@ namespace gr {
     class my_qpsk_demod_cb_impl : public my_qpsk_demod_cb
     {
      private:
-      bool d_differential_coding; 
-      bool d_Gray_code;	     
+      //! If true, we're using a Gray code
+      bool d_gray_code;
 
      public:
-      my_qpsk_demod_cb_impl(bool differential_coding, bool Gray_code);
+      my_qpsk_demod_cb_impl(bool gray_code);
       ~my_qpsk_demod_cb_impl();
 
-      // Where all the action really happens
       void forecast (int noutput_items, gr_vector_int &ninput_items_required);
 
       int general_work(int noutput_items,
-		       gr_vector_int &ninput_items,
-		       gr_vector_const_void_star &input_items,
-		       gr_vector_void_star &output_items);
-      unsigned char get_minimum_distances(const gr_complex *sample);
-      float get_euclidean_distance(gr_complex *d1, const gr_complex *d2);
-      };
+                        gr_vector_int &ninput_items,
+                        gr_vector_const_void_star &input_items,
+                        gr_vector_void_star &output_items);
 
-  } // namespace tutorial 
+      //! Returns the bit value for the closest constellation point to this sample
+      unsigned char get_minimum_distances(const gr_complex &sample);
+    };
+
+  } // namespace tutorial
 } // namespace gr
 
 #endif /* INCLUDED_DEMOD_MY_QPSK_DEMOD_CB_IMPL_H */

@@ -20,7 +20,6 @@
  * Boston, MA 02110-1301, USA.
  */
 
-
 #ifndef INCLUDED_DEMOD_MY_QPSK_DEMOD_CB_H
 #define INCLUDED_DEMOD_MY_QPSK_DEMOD_CB_H
 
@@ -40,15 +39,19 @@ namespace gr {
      *
      * With Gray coding:
      *
+     * <pre>
      * (1,0) | (0,0)
      * ------+------
      * (1,1) | (0,1)
+     * </pre>
      *
      * Without Gray coding:
      *
+     * <pre>
      * (1,0) | (0,0)
      * ------+------
      * (1,1) | (0,1)
+     * </pre>
      */
     class TUTORIAL_API my_qpsk_demod_cb : virtual public gr::block
     {
@@ -63,10 +66,9 @@ namespace gr {
        * class. demod::my_qpsk_demod_cb::make is the public interface for
        * creating new instances.
        *
-       * \param differential_coding Set to true if data symbols were encoded differentially.
        * \param gray_code Set to true to activate the Gray code.
        */
-      static sptr make(bool differential_coding, bool gray_code);
+      static sptr make(bool gray_code);
     };
 
   } // namespace tutorial 
