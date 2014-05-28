@@ -5,9 +5,16 @@
   <category>Tutorial</category>
   <import>import tutorial</import>
   <make>tutorial.chat_sanitizer($prefix)</make>
+  <callback>post_message($msg)</callback>
   <param>
     <name>Chat Prefix</name>
     <key>prefix</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Message</name>
+    <key>msg</key>
+    <value>Hello World!</value>
     <type>string</type>
   </param>
   <source>

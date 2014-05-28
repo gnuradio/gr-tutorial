@@ -5,8 +5,8 @@
   <category>Tutorial</category>
   <import>import tutorial</import>
   <make>tutorial.chat_receiver()</make>
-  <source>
+  <sink>
     <name>in</name>
     <type>message</type>
-  </source>
+  </sink>
 </block>

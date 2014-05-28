@@ -17,7 +17,7 @@
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
 
-install(FILES
-  tutorial_my_qpsk_demod_cb.xml
-    tutorial_chat_sanitizer.xml DESTINATION share/gnuradio/grc/blocks
+file(GLOB xml_files "*.xml")
+install(FILES ${xml_files}
+    DESTINATION share/gnuradio/grc/blocks COMPONENT "tutorial_python"
 )
