@@ -19,5 +19,5 @@
 
 install(FILES
   tutorial_my_qpsk_demod_cb.xml
-  DESTINATION share/gnuradio/grc/blocks
+    tutorial_chat_sanitizer.xml DESTINATION share/gnuradio/grc/blocks
 )

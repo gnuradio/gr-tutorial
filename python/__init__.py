@@ -45,6 +45,7 @@ if _RTLD_GLOBAL != 0:
 from tutorial_swig import *
 
 # import any pure python here
+from chat_blocks import chat_sanitizer, chat_receiver
 #
 
 # ----------------------------------------------------------------

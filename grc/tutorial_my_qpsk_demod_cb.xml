@@ -2,7 +2,7 @@
 <block>
   <name>My QPSK Demodulator</name>
   <key>tutorial_my_qpsk_demod_cb</key>
-  <category>tutorial</category>
+  <category>Tutorial</category>
   <import>import tutorial</import>
   <make>tutorial.my_qpsk_demod_cb($differential_coding, $Gray_code)</make>
   <param>

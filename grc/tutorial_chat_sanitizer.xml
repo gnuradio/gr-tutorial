@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<block>
+  <name>Chat Sanitizer</name>
+  <key>tutorial_chat_sanitizer</key>
+  <category>Tutorial</category>
+  <import>import tutorial</import>
+  <make>tutorial.chat_sanitizer($prefix)</make>
+  <param>
+    <name>Chat Prefix</name>
+    <key>prefix</key>
+    <type>string</type>
+  </param>
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+</block>

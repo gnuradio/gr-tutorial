@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<block>
+  <name>Chat Receiver</name>
+  <key>tutorial_chat_receiver</key>
+  <category>Tutorial</category>
+  <import>import tutorial</import>
+  <make>tutorial.chat_receiver()</make>
+  <source>
+    <name>in</name>
+    <type>message</type>
+  </source>
+</block>
