@@ -1,29 +1,30 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Copyright 2014 Free Software Foundation, Inc.
-# 
+#
 # This file is part of GNU Radio
-# 
+#
 # GNU Radio is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3, or (at your option)
 # any later version.
-# 
+#
 # GNU Radio is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with GNU Radio; see the file COPYING.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
-# 
+#
 
 import string
 import numpy
 import pmt
 from gnuradio import gr
+from gnuradio import digital
 
 class chat_sanitizer(gr.basic_block):
     """
@@ -32,7 +33,7 @@ class chat_sanitizer(gr.basic_block):
     prepend a prefix, and send the string as a uint8 vector out on
     the message port named 'msg_out'.
     """
-    def __init__(self, prefix="user1"):
+    def __init__(self, prefix="user1", access_code=None):
         gr.basic_block.__init__(self,
             name="chat_sanitizer",
             in_sig=[], # No streaming ports!
@@ -41,12 +42,33 @@ class chat_sanitizer(gr.basic_block):
         # Register the message port
         self.message_port_register_out(pmt.intern('out'))
 
+        # access_code = digital.packet_utils.default_access_code
+        #  1010110011011101101001001110001011110010100011000010000011111100
+        if access_code:
+            if not digital.packet_utils.is_1_0_string(access_code):
+                raise ValueError, \
+                    "Invalid access_code %r. Must be string of 1's and 0's" % (access_code,)
+
+        self.access_code = access_code
+
+
     def post_message(self, msg_str):
         """ Take a string, remove all non-printable characters,
         prepend the prefix and post to the next block. """
         # Do string sanitization:
         msg_str = filter(lambda x: x in string.printable, msg_str)
         send_str = "[{}] {}".format(self.prefix, msg_str)
+
+        # prepend AC to sent packet
+        if self.access_code:
+            (packed_access_code, padded) = digital.packet_utils.conv_1_0_string_to_packed_binary_string(self.access_code)
+            print self.access_code
+            print map(ord, packed_access_code)
+            print padded
+            send_str = packed_access_code + send_str
+
+        print len(send_str)
+
         # Create an empty PMT (contains only spaces):
         send_pmt = pmt.make_u8vector(len(send_str), ord(' '))
         # Copy all characters to the u8vector:
@@ -116,5 +138,3 @@ if __name__ == "__main__":
     # Wait for blocks to shut down
     tb.wait()
     print ">>> Done. Enjoy the message passing! <<<"
-
-

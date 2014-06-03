@@ -4,7 +4,8 @@
   <key>tutorial_chat_sanitizer</key>
   <category>Tutorial</category>
   <import>import tutorial</import>
-  <make>tutorial.chat_sanitizer($prefix)</make>
+  <import>from gnuradio.digital import packet_utils</import>
+  <make>tutorial.chat_sanitizer($prefix, $access_code)</make>
   <callback>post_message($msg)</callback>
   <param>
     <name>Chat Prefix</name>
@@ -16,6 +17,13 @@
     <key>msg</key>
     <value>Hello World!</value>
     <type>string</type>
+  </param>
+  <param>
+    <name>Access code</name>
+    <key>access_code</key>
+    <value></value>
+    <type>string</type>
+    <hide>part</hide>
   </param>
   <source>
     <name>out</name>
