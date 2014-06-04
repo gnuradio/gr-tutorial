@@ -51,7 +51,7 @@ namespace gr {
       if (gray_code) {
 	GR_LOG_DEBUG(d_debug_logger, "Gray code enabled.");
       } else {
-	GR_LOG_DEBUG(d_debug_logger, "Gray code enabled.");
+	GR_LOG_DEBUG(d_debug_logger, "Gray code disabled.");
       }
     }
 

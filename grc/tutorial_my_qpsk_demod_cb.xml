@@ -7,7 +7,7 @@
   <make>tutorial.my_qpsk_demod_cb($Gray_code)</make>
   <param>
     <name>Gray Code</name>
-    <key>Gray_code</key>
+    <key>gray_code</key>
     <value>True</value>
     <type>bool</type>
     <option>
