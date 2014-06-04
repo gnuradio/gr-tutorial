@@ -23,5 +23,6 @@
 install(FILES
     api.h
     my_qpsk_demod_cb.h
+    my_qpsk_demod_tags_cb.h
     DESTINATION include/tutorial
 )

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<block>
+  <name>My QPSK Demodulator (with tags)</name>
+  <key>tutorial_my_qpsk_demod_tags_cb</key>
+  <category>Tutorial</category>
+  <import>import tutorial</import>
+  <make>tutorial.my_qpsk_demod_tags_cb($gray_code)</make>
+  <param>
+    <name>Gray Code</name>
+    <key>gray_code</key>
+    <value>True</value>
+    <type>bool</type>
+    <option>
+      <name>Yes</name>
+      <key>True</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>False</key>
+    </option>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>
