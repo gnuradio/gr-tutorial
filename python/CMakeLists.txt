@@ -42,4 +42,3 @@ include(GrTest)
 
 set(GR_TEST_TARGET_DEPS gnuradio-tutorial)
 set(GR_TEST_PYTHON_DIRS ${CMAKE_BINARY_DIR}/swig)
-GR_ADD_TEST(qa_chat_sanitizer ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_chat_sanitizer.py)
