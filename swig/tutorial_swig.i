@@ -9,8 +9,11 @@
 
 %{
 #include "tutorial/my_qpsk_demod_cb.h"
+#include "tutorial/my_qpsk_demod_tags_cb.h"
 %}
 
 %include "tutorial/my_qpsk_demod_cb.h"
+%include "tutorial/my_qpsk_demod_tags_cb.h"
 
 GR_SWIG_BLOCK_MAGIC2(tutorial, my_qpsk_demod_cb);
+GR_SWIG_BLOCK_MAGIC2(tutorial, my_qpsk_demod_tags_cb);

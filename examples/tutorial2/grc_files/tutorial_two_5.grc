@@ -1,11 +1,73 @@
 <?xml version='1.0' encoding='ASCII'?>
 <flow_graph>
-  <timestamp>Wed Jun  4 21:19:17 2014</timestamp>
+  <timestamp>Sun Jun  1 16:45:40 2014</timestamp>
+  <block>
+    <key>variable_function_probe</key>
+    <param>
+      <key>id</key>
+      <value>probe_var</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>probe_signal</value>
+    </param>
+    <param>
+      <key>function_name</key>
+      <value>level</value>
+    </param>
+    <param>
+      <key>function_args</key>
+      <value></value>
+    </param>
+    <param>
+      <key>poll_rate</key>
+      <value>10</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(10, 149)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>id</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>100e3</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(12, 77)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
   <block>
     <key>options</key>
     <param>
       <key>id</key>
-      <value>tags_interp</value>
+      <value>tutorial_two_5</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -52,12 +114,8 @@
       <value></value>
     </param>
     <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
       <key>_coordinate</key>
-      <value>(-8, -8)</value>
+      <value>(10, 10)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -65,65 +123,38 @@
     </param>
   </block>
   <block>
-    <key>variable</key>
+    <key>analog_sig_source_x</key>
     <param>
       <key>id</key>
+      <value>analog_sig_source_x_1</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
       <value>samp_rate</value>
     </param>
     <param>
-      <key>_enabled</key>
-      <value>True</value>
+      <key>waveform</key>
+      <value>analog.GR_TRI_WAVE</value>
     </param>
     <param>
-      <key>value</key>
-      <value>32000</value>
+      <key>freq</key>
+      <value>100e-6</value>
     </param>
     <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(8, 82)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_tags_strobe</key>
-    <param>
-      <key>id</key>
-      <value>blocks_tags_strobe_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>pmt.intern("TEST")</value>
-    </param>
-    <param>
-      <key>key</key>
-      <value>pmt.intern("strobe")</value>
-    </param>
-    <param>
-      <key>nsamps</key>
-      <value>10</value>
-    </param>
-    <param>
-      <key>vlen</key>
+      <key>amp</key>
       <value>1</value>
     </param>
     <param>
-      <key>alias</key>
-      <value></value>
+      <key>offset</key>
+      <value>0</value>
     </param>
     <param>
       <key>affinity</key>
@@ -139,7 +170,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(196, 127)</value>
+      <value>(173, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -147,10 +178,10 @@
     </param>
   </block>
   <block>
-    <key>blocks_vector_source_x</key>
+    <key>blocks_probe_signal_x</key>
     <param>
       <key>id</key>
-      <value>blocks_vector_source_x_0</value>
+      <value>probe_signal</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -161,24 +192,51 @@
       <value>float</value>
     </param>
     <param>
-      <key>vector</key>
-      <value>range(10)</value>
+      <key>affinity</key>
+      <value></value>
     </param>
     <param>
-      <key>tags</key>
-      <value>[]</value>
+      <key>_coordinate</key>
+      <value>(362, 48)</value>
     </param>
     <param>
-      <key>repeat</key>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>analog_sig_source_x</key>
+    <param>
+      <key>id</key>
+      <value>analog_sig_source_x_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
-      <key>vlen</key>
-      <value>1</value>
+      <key>type</key>
+      <value>float</value>
     </param>
     <param>
-      <key>alias</key>
-      <value></value>
+      <key>samp_rate</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>waveform</key>
+      <value>analog.GR_SIN_WAVE</value>
+    </param>
+    <param>
+      <key>freq</key>
+      <value>20e3*probe_var</value>
+    </param>
+    <param>
+      <key>amp</key>
+      <value>500e-3</value>
+    </param>
+    <param>
+      <key>offset</key>
+      <value>0</value>
     </param>
     <param>
       <key>affinity</key>
@@ -194,7 +252,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(196, 25)</value>
+      <value>(147, 150)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -202,46 +260,38 @@
     </param>
   </block>
   <block>
-    <key>blocks_add_xx</key>
+    <key>audio_sink</key>
     <param>
       <key>id</key>
-      <value>blocks_add_xx_0</value>
+      <value>audio_sink_0</value>
     </param>
     <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
-      <key>type</key>
-      <value>float</value>
+      <key>samp_rate</key>
+      <value>48000</value>
+    </param>
+    <param>
+      <key>device_name</key>
+      <value></value>
+    </param>
+    <param>
+      <key>ok_to_block</key>
+      <value>True</value>
     </param>
     <param>
       <key>num_inputs</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>vlen</key>
       <value>1</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
     </param>
     <param>
       <key>affinity</key>
       <value></value>
     </param>
     <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>_coordinate</key>
-      <value>(409, 86)</value>
+      <value>(348, 95)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -249,46 +299,46 @@
     </param>
   </block>
   <block>
-    <key>blocks_repeat</key>
+    <key>qtgui_tab_widget</key>
     <param>
       <key>id</key>
-      <value>blocks_repeat_0</value>
+      <value>tab</value>
     </param>
     <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
-      <key>type</key>
-      <value>float</value>
+      <key>num_tabs</key>
+      <value>2</value>
     </param>
     <param>
-      <key>interp</key>
-      <value>100</value>
+      <key>label0</key>
+      <value>Time</value>
     </param>
     <param>
-      <key>vlen</key>
-      <value>1</value>
+      <key>label1</key>
+      <value>Waterfall</value>
     </param>
     <param>
-      <key>alias</key>
+      <key>label2</key>
+      <value>Tab 2</value>
+    </param>
+    <param>
+      <key>label3</key>
+      <value>Tab 3</value>
+    </param>
+    <param>
+      <key>label4</key>
+      <value>Tab 4</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
       <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(725, 98)</value>
+      <value>(8, 263)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -315,11 +365,11 @@
     </param>
     <param>
       <key>size</key>
-      <value>3000</value>
+      <value>1024</value>
     </param>
     <param>
       <key>srate</key>
-      <value>1</value>
+      <value>samp_rate</value>
     </param>
     <param>
       <key>autoscale</key>
@@ -331,7 +381,7 @@
     </param>
     <param>
       <key>ymax</key>
-      <value>10</value>
+      <value>1</value>
     </param>
     <param>
       <key>nconnections</key>
@@ -347,11 +397,11 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>tab@0</value>
     </param>
     <param>
       <key>tr_mode</key>
-      <value>qtgui.TRIG_MODE_TAG</value>
+      <value>qtgui.TRIG_MODE_FREE</value>
     </param>
     <param>
       <key>tr_slope</key>
@@ -371,7 +421,7 @@
     </param>
     <param>
       <key>tr_tag</key>
-      <value>"strobe"</value>
+      <value>""</value>
     </param>
     <param>
       <key>label1</key>
@@ -614,16 +664,12 @@
       <value>1.0</value>
     </param>
     <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
       <key>affinity</key>
       <value></value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(934, 76)</value>
+      <value>(344, 147)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -631,61 +677,10 @@
     </param>
   </block>
   <block>
-    <key>blocks_throttle</key>
+    <key>qtgui_waterfall_sink_x</key>
     <param>
       <key>id</key>
-      <value>blocks_throttle_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>samples_per_second</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>ignoretag</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(532, 98)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>qtgui_time_sink_x</key>
-    <param>
-      <key>id</key>
-      <value>qtgui_time_sink_x_0_0</value>
+      <value>qtgui_waterfall_sink_x_0</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -700,24 +695,20 @@
       <value>QT GUI Plot</value>
     </param>
     <param>
-      <key>size</key>
-      <value>3000</value>
+      <key>fftsize</key>
+      <value>1024</value>
     </param>
     <param>
-      <key>srate</key>
-      <value>1</value>
+      <key>wintype</key>
+      <value>firdes.WIN_BLACKMAN_hARRIS</value>
     </param>
     <param>
-      <key>autoscale</key>
-      <value>False</value>
+      <key>fc</key>
+      <value>0</value>
     </param>
     <param>
-      <key>ymin</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>ymax</key>
-      <value>10</value>
+      <key>bw</key>
+      <value>samp_rate</value>
     </param>
     <param>
       <key>nconnections</key>
@@ -728,56 +719,16 @@
       <value>0.10</value>
     </param>
     <param>
-      <key>entags</key>
-      <value>True</value>
-    </param>
-    <param>
       <key>gui_hint</key>
-      <value></value>
-    </param>
-    <param>
-      <key>tr_mode</key>
-      <value>qtgui.TRIG_MODE_TAG</value>
-    </param>
-    <param>
-      <key>tr_slope</key>
-      <value>qtgui.TRIG_SLOPE_POS</value>
-    </param>
-    <param>
-      <key>tr_level</key>
-      <value>0.0</value>
-    </param>
-    <param>
-      <key>tr_delay</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>tr_chan</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>tr_tag</key>
-      <value>"strobe"</value>
+      <value>tab@1</value>
     </param>
     <param>
       <key>label1</key>
       <value></value>
     </param>
     <param>
-      <key>width1</key>
-      <value>1</value>
-    </param>
-    <param>
       <key>color1</key>
-      <value>"blue"</value>
-    </param>
-    <param>
-      <key>style1</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>marker1</key>
-      <value>-1</value>
+      <value>0</value>
     </param>
     <param>
       <key>alpha1</key>
@@ -788,20 +739,8 @@
       <value></value>
     </param>
     <param>
-      <key>width2</key>
-      <value>1</value>
-    </param>
-    <param>
       <key>color2</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>style2</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>marker2</key>
-      <value>-1</value>
+      <value>0</value>
     </param>
     <param>
       <key>alpha2</key>
@@ -812,20 +751,8 @@
       <value></value>
     </param>
     <param>
-      <key>width3</key>
-      <value>1</value>
-    </param>
-    <param>
       <key>color3</key>
-      <value>"green"</value>
-    </param>
-    <param>
-      <key>style3</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>marker3</key>
-      <value>-1</value>
+      <value>0</value>
     </param>
     <param>
       <key>alpha3</key>
@@ -836,20 +763,8 @@
       <value></value>
     </param>
     <param>
-      <key>width4</key>
-      <value>1</value>
-    </param>
-    <param>
       <key>color4</key>
-      <value>"black"</value>
-    </param>
-    <param>
-      <key>style4</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>marker4</key>
-      <value>-1</value>
+      <value>0</value>
     </param>
     <param>
       <key>alpha4</key>
@@ -860,20 +775,8 @@
       <value></value>
     </param>
     <param>
-      <key>width5</key>
-      <value>1</value>
-    </param>
-    <param>
       <key>color5</key>
-      <value>"cyan"</value>
-    </param>
-    <param>
-      <key>style5</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>marker5</key>
-      <value>-1</value>
+      <value>0</value>
     </param>
     <param>
       <key>alpha5</key>
@@ -884,20 +787,8 @@
       <value></value>
     </param>
     <param>
-      <key>width6</key>
-      <value>1</value>
-    </param>
-    <param>
       <key>color6</key>
-      <value>"magenta"</value>
-    </param>
-    <param>
-      <key>style6</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>marker6</key>
-      <value>-1</value>
+      <value>0</value>
     </param>
     <param>
       <key>alpha6</key>
@@ -908,20 +799,8 @@
       <value></value>
     </param>
     <param>
-      <key>width7</key>
-      <value>1</value>
-    </param>
-    <param>
       <key>color7</key>
-      <value>"yellow"</value>
-    </param>
-    <param>
-      <key>style7</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>marker7</key>
-      <value>-1</value>
+      <value>0</value>
     </param>
     <param>
       <key>alpha7</key>
@@ -932,20 +811,8 @@
       <value></value>
     </param>
     <param>
-      <key>width8</key>
-      <value>1</value>
-    </param>
-    <param>
       <key>color8</key>
-      <value>"dark red"</value>
-    </param>
-    <param>
-      <key>style8</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>marker8</key>
-      <value>-1</value>
+      <value>0</value>
     </param>
     <param>
       <key>alpha8</key>
@@ -956,20 +823,8 @@
       <value></value>
     </param>
     <param>
-      <key>width9</key>
-      <value>1</value>
-    </param>
-    <param>
       <key>color9</key>
-      <value>"dark green"</value>
-    </param>
-    <param>
-      <key>style9</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>marker9</key>
-      <value>-1</value>
+      <value>0</value>
     </param>
     <param>
       <key>alpha9</key>
@@ -980,28 +835,12 @@
       <value></value>
     </param>
     <param>
-      <key>width10</key>
-      <value>1</value>
-    </param>
-    <param>
       <key>color10</key>
-      <value>"blue"</value>
-    </param>
-    <param>
-      <key>style10</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>marker10</key>
-      <value>-1</value>
+      <value>0</value>
     </param>
     <param>
       <key>alpha10</key>
       <value>1.0</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
     </param>
     <param>
       <key>affinity</key>
@@ -1009,7 +848,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(746, 184)</value>
+      <value>(343, 245)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1017,38 +856,26 @@
     </param>
   </block>
   <connection>
-    <source_block_id>blocks_vector_source_x_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
+    <source_block_id>analog_sig_source_x_1</source_block_id>
+    <sink_block_id>probe_signal</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_tags_strobe_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_add_xx_0</source_block_id>
-    <sink_block_id>blocks_throttle_0</sink_block_id>
+    <source_block_id>analog_sig_source_x_0</source_block_id>
+    <sink_block_id>audio_sink_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_throttle_0</source_block_id>
-    <sink_block_id>blocks_repeat_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_repeat_0</source_block_id>
+    <source_block_id>analog_sig_source_x_0</source_block_id>
     <sink_block_id>qtgui_time_sink_x_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_throttle_0</source_block_id>
-    <sink_block_id>qtgui_time_sink_x_0_0</sink_block_id>
+    <source_block_id>analog_sig_source_x_0</source_block_id>
+    <sink_block_id>qtgui_waterfall_sink_x_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
