@@ -51,7 +51,7 @@ namespace gr {
       if (gray_code) {
 	GR_LOG_DEBUG(d_debug_logger, "Gray code enabled.");
       } else {
-	GR_LOG_DEBUG(d_debug_logger, "Gray code enabled.");
+	GR_LOG_DEBUG(d_debug_logger, "Gray code disabled.");
       }
     }
 
@@ -103,11 +103,11 @@ namespace gr {
 	unsigned char bit0 = 0;
 	unsigned char bit1 = 0;
 	// The two left quadrants (quadrature component < 0) have this bit set to 1
-	if (sample.imag() < 0) {
+	if (sample.real() < 0) {
 	  bit0 = 0x01;
 	}
 	// The two lower quadrants (in-phase component < 0) have this bit set to 1
-	if (sample.real() < 0) {
+	if (sample.imag() < 0) {
 	  bit1 = 0x01 << 1;
 	}
 	return bit0 | bit1;
