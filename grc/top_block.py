@@ -2,7 +2,7 @@
 ##################################################
 # Gnuradio Python Flow Graph
 # Title: Top Block
-# Generated: Mon May  5 09:04:44 2014
+# Generated: Fri May 30 05:41:08 2014
 ##################################################
 
 from gnuradio import analog
@@ -76,7 +76,7 @@ class top_block(grc_wxgui.top_block_gui):
         	omega_limit=0.005,
         )
         self.Add(self.wxgui_constellationsink2_0.win)
-        self.tutorial_my_qpsk_demod_cb_0 = tutorial.my_qpsk_demod_cb(True, True)
+        self.tutorial_my_qpsk_demod_cb_0 = tutorial.my_qpsk_demod_cb(True)
         self.digital_psk_mod_0 = digital.psk.psk_mod(
           constellation_points=4,
           mod_code="gray",
@@ -86,9 +86,9 @@ class top_block(grc_wxgui.top_block_gui):
           verbose=False,
           log=False,
           )
-        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate)
+        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_head_0 = blocks.head(gr.sizeof_char*1, 100)
-        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_char*1, "/home/kaushik/src/gr-tutorial/grc/qpsk_demod_sink.dat", False)
+        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_char*1, "./examples/qpsk_demod_sink.dat", False)
         self.blocks_file_sink_0.set_unbuffered(True)
         self.blocks_add_xx_0 = blocks.add_vcc(1)
         self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 4, 10000)), True)
@@ -128,8 +128,8 @@ class top_block(grc_wxgui.top_block_gui):
 
 if __name__ == '__main__':
     import ctypes
-    import os
-    if os.name == 'posix':
+    import sys
+    if sys.platform.startswith('linux'):
         try:
             x11 = ctypes.cdll.LoadLibrary('libX11.so')
             x11.XInitThreads()
