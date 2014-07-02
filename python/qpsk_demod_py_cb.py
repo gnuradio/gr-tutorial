@@ -28,11 +28,11 @@ class qpsk_demod_py_cb(gr.sync_block):
     docstring for block qpsk_demod_py_cb
     """
     def __init__(self, gray_code):
-        self.gray_code = gray_code
         gr.sync_block.__init__(self,
             name="qpsk_demod_py_cb",
             in_sig=[numpy.complex64],
             out_sig=[numpy.uint8])
+        self.gray_code = gray_code
 
     def get_minimum_distances(self, sample):
         if self.gray_code == 1:
