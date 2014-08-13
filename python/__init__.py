@@ -46,6 +46,8 @@ from tutorial_swig import *
 
 # import any pure python here
 from chat_blocks import chat_sanitizer, chat_receiver
+from multiply_py_ff import multiply_py_ff
+from qpsk_demod_py_cb import qpsk_demod_py_cb
 #
 
 # ----------------------------------------------------------------
