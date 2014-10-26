@@ -67,7 +67,7 @@ class chat_sanitizer(gr.basic_block):
             print padded
             send_str = packed_access_code + send_str
 
-        print len(send_str)
+        #print len(send_str)
 
         # Create an empty PMT (contains only spaces):
         send_pmt = pmt.make_u8vector(len(send_str), ord(' '))
@@ -132,6 +132,8 @@ if __name__ == "__main__":
             chat_tx.post_message(chat_str)
             time.sleep(0.1)
     except KeyboardInterrupt:
+        print "\n"
+    except EOFError:
         print "\n"
     # Shut down flow graph
     tb.stop()
