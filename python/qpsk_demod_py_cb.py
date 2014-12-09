@@ -37,22 +37,22 @@ class qpsk_demod_py_cb(gr.sync_block):
     def get_minimum_distances(self, sample):
         if self.gray_code == 1:
             if (sample.imag >= 0 and sample.real >= 0):
-                return 3 # 1+1j
+                return 0 # 1+1j
             elif (sample.imag >= 0 and sample.real < 0):
-                return 1 # -1+1j
+                return 2 # -1+1j
             elif (sample.imag < 0 and sample.real < 0):
-                return 0 # -1-1j
+                return 3 # -1-1j
             elif (sample.imag < 0 and sample.real >= 0):
-                return 2 # 1-1j
+                return 1 # 1-1j
         else:
             if (sample.imag >= 0 and sample.real >= 0):
-                return 2 # 1+1j
+                return 0 # 1+1j
             elif (sample.imag >= 0 and sample.real < 0):
-                return 1 # -1+1j
+                return 3 # -1+1j
             elif (sample.imag < 0 and sample.real < 0):
-                return 0 # -1-1j
+                return 2 # -1-1j
             elif (sample.imag < 0 and sample.real >= 0):
-                return 3 # 1-1j
+                return 1 # 1-1j
 
     def work(self, input_items, output_items):
         in0 = input_items[0]

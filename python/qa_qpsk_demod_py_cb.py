@@ -35,7 +35,7 @@ class qa_qpsk_demod_py_cb (gr_unittest.TestCase):
     def test_001_t (self):
         gray_code = False
         src_data = ((-1-1j), (-1+1j), (1+1j), (1-1j))
-        expected_result = (0, 1, 2, 3)
+        expected_result = (2, 3, 0, 1)
         src = blocks.vector_source_c (src_data)
         qpsk = qpsk_demod_py_cb (gray_code)
         dst = blocks.vector_sink_b ()
@@ -48,7 +48,7 @@ class qa_qpsk_demod_py_cb (gr_unittest.TestCase):
     def test_002_t (self):
         gray_code = True
         src_data = ((-1-1j), (-1+1j), (1+1j), (1-1j))
-        expected_result = (0, 1, 3, 2)
+        expected_result = (3, 2, 0, 1)
         src = blocks.vector_source_c (src_data)
         qpsk = qpsk_demod_py_cb (gray_code)
         dst = blocks.vector_sink_b ()
