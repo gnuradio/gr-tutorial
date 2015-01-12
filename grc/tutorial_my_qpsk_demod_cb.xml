@@ -4,10 +4,10 @@
   <key>tutorial_my_qpsk_demod_cb</key>
   <category>Tutorial</category>
   <import>import tutorial</import>
-  <make>tutorial.my_qpsk_demod_cb($Gray_code)</make>
+  <make>tutorial.my_qpsk_demod_cb($gray_code)</make>
   <param>
     <name>Gray Code</name>
-    <key>Gray_code</key>
+    <key>gray_code</key>
     <value>True</value>
     <type>bool</type>
     <option>
