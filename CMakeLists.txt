@@ -83,6 +83,7 @@ set(GRC_BLOCKS_DIR      ${GR_PKG_DATA_DIR}/grc/blocks)
 ########################################################################
 # Find gnuradio build dependencies
 ########################################################################
+find_package(Log4cpp)
 find_package(CppUnit)
 find_package(Doxygen)
 
@@ -95,6 +96,9 @@ find_package(Gnuradio "3.7.2" REQUIRED)
 
 if(NOT CPPUNIT_FOUND)
     message(FATAL_ERROR "CppUnit required to compile tutorial")
+endif()
+if(NOT LOG4CPP_FOUND)
+    message(FATAL_ERROR "Log4Cpp required to compile tutorial")
 endif()
 
 ########################################################################
@@ -116,6 +120,7 @@ include_directories(
     ${CMAKE_BINARY_DIR}/include
     ${Boost_INCLUDE_DIRS}
     ${CPPUNIT_INCLUDE_DIRS}
+    ${LOG4CPP_INCLUDE_DIRS}
     ${GNURADIO_ALL_INCLUDE_DIRS}
 )
 

@@ -22,7 +22,7 @@
 ########################################################################
 include(GrPlatform) #define LIB_SUFFIX
 
-include_directories(${Boost_INCLUDE_DIR})
+include_directories(${Boost_INCLUDE_DIR} ${LOG4CPP_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 
 list(APPEND tutorial_sources
@@ -37,7 +37,7 @@ if(NOT tutorial_sources)
 endif(NOT tutorial_sources)
 
 add_library(gnuradio-tutorial SHARED ${tutorial_sources})
-target_link_libraries(gnuradio-tutorial ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
+target_link_libraries(gnuradio-tutorial ${Boost_LIBRARIES} ${LOG4CPP_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
 set_target_properties(gnuradio-tutorial PROPERTIES DEFINE_SYMBOL "gnuradio_tutorial_EXPORTS")
 
 if(APPLE)
@@ -74,6 +74,7 @@ target_link_libraries(
   ${GNURADIO_RUNTIME_LIBRARIES}
   ${Boost_LIBRARIES}
   ${CPPUNIT_LIBRARIES}
+  ${LOG4CPP_LIBRARIES}
   gnuradio-tutorial
 )
 
